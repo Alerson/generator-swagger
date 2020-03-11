@@ -57,6 +57,19 @@
 			<version>1.6.0</version>
 		</dependency>
 
+		<!-- JAVAX -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<!-- JAVAX -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -102,38 +115,18 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${basedir}/src/main/resources/yaml/swagger.yaml</inputSpec>
+							<inputSpec>${basedir}/src/main/resources/yaml/swagger-cadastro-positivo-b2b.yaml</inputSpec>
 							<language>jaxrs</language>
 							<configHelp />
 							<generateSupportingFiles>false</generateSupportingFiles>
-							<generateApis>false</generateApis>
 							<output>${basedir}/src/main</output>
 							<modelPackage>com.swagger.generatorswagger.model</modelPackage>
 							<apiPackage>com.swagger.generatorswagger.api</apiPackage>
-							<generateApis>false</generateApis>
+							<generateApis>true</generateApis>
 							<configOptions>
-								<library>jersey1</library>
 								<sourceFolder>java</sourceFolder>
 								<useBeanValidation>false</useBeanValidation>
 							</configOptions>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generated-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>target/generated-sources/swagger/gen</source>
-							</sources>
 						</configuration>
 					</execution>
 				</executions>
