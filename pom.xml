@@ -115,7 +115,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${basedir}/src/main/resources/yaml/swagger-cadastro-positivo-b2b.yaml</inputSpec>
+							<inputSpec>${basedir}/src/main/resources/yaml/file.yaml</inputSpec>
 							<language>jaxrs</language>
 							<configHelp />
 							<generateSupportingFiles>false</generateSupportingFiles>
@@ -127,6 +127,24 @@
 								<sourceFolder>java</sourceFolder>
 								<useBeanValidation>false</useBeanValidation>
 							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generated-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>target/generated-sources/swagger/gen</source>
+							</sources>
 						</configuration>
 					</execution>
 				</executions>
